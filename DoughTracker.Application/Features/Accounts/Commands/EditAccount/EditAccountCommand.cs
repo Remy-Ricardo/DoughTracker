@@ -1,19 +1,13 @@
-﻿using DoughTracker.Domain.Common;
+﻿using MediatR;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace DoughTracker.Domain.Entities
+namespace DoughTracker.Application.Features.Accounts.Commands.EditAccount
 {
-    public class Account : AuditableEntity
+    public class EditAccountCommand : IRequest
     {
-        [Key]
         public Guid AccountID { get; set; }
-
-        public long AccountNumber { get; set; }
-
-        public long RoutingNumber { get; set; }
 
         public Guid AccountTypeID { get; set; }
 

@@ -17,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{261098F6-940F-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoughTracker.Domain", "DoughTracker.Domain\DoughTracker.Domain.csproj", "{522800F5-8210-4566-B8AC-1D70C3CDC79F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughTracker.Application", "DoughTracker.Application\DoughTracker.Application.csproj", "{A3E11E94-C2DB-4D50-9E3D-337D4E0CBB83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoughTracker.Application", "DoughTracker.Application\DoughTracker.Application.csproj", "{A3E11E94-C2DB-4D50-9E3D-337D4E0CBB83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughTracker.Persistence", "DoughTracker.Persistence\DoughTracker.Persistence.csproj", "{CA42CCA7-1D2D-4A8A-BFE5-34C03A1E1D25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoughTracker.Persistence", "DoughTracker.Persistence\DoughTracker.Persistence.csproj", "{CA42CCA7-1D2D-4A8A-BFE5-34C03A1E1D25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughTracker.Infrastructure", "DoughTracker.Infrastructure\DoughTracker.Infrastructure.csproj", "{860CC531-451C-48CC-8CC0-8C43346BC3F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoughTracker.API", "DoughTracker.API\DoughTracker.API.csproj", "{725085F2-B5F5-4DD6-946D-EC1269117FD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{CA42CCA7-1D2D-4A8A-BFE5-34C03A1E1D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA42CCA7-1D2D-4A8A-BFE5-34C03A1E1D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA42CCA7-1D2D-4A8A-BFE5-34C03A1E1D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{860CC531-451C-48CC-8CC0-8C43346BC3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{860CC531-451C-48CC-8CC0-8C43346BC3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{860CC531-451C-48CC-8CC0-8C43346BC3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{860CC531-451C-48CC-8CC0-8C43346BC3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725085F2-B5F5-4DD6-946D-EC1269117FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725085F2-B5F5-4DD6-946D-EC1269117FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725085F2-B5F5-4DD6-946D-EC1269117FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725085F2-B5F5-4DD6-946D-EC1269117FD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +63,8 @@ Global
 		{522800F5-8210-4566-B8AC-1D70C3CDC79F} = {D935B46E-AB74-4CDE-BDE5-F3757DB2565A}
 		{A3E11E94-C2DB-4D50-9E3D-337D4E0CBB83} = {D935B46E-AB74-4CDE-BDE5-F3757DB2565A}
 		{CA42CCA7-1D2D-4A8A-BFE5-34C03A1E1D25} = {5ED44F3E-E81A-4517-B370-B425725FDE9B}
+		{860CC531-451C-48CC-8CC0-8C43346BC3F6} = {5ED44F3E-E81A-4517-B370-B425725FDE9B}
+		{725085F2-B5F5-4DD6-946D-EC1269117FD6} = {FFBEA48E-5545-4B1C-A850-2CCECD3562C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D72091CC-19E9-4582-8FEE-A7C4427F3986}

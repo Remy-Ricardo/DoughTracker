@@ -12,29 +12,24 @@ namespace DoughTracker.Application.Features.Transactions
 {
     public class GetTransactionDetailQueryHandler : IRequestHandler<GetTransactionDetailQuery, TransactionDetailVm>
     {
-        private readonly IAsyncRepository<Transaction> _transactionRepository;
-        private readonly IAsyncRepository<Category> _categoryRepository;
-        private readonly IAsyncRepository<Account> _accountRepository;
+        private readonly ITransactionRepository _transactionRepository;
+        private readonly ITransactionCategoryRepository _transactionCategoryRepository;
+        private readonly IAccountRepository _accountRepository;
         private readonly IMapper _mapper;
 
-        public GetTransactionDetailQueryHandler(IMapper mapper, IAsyncRepository<Transaction> transactionRepository, 
-            IAsyncRepository<Category> categoryRepository, IAsyncRepository<Account> accountRepository)
+        public GetTransactionDetailQueryHandler(IMapper mapper, ITransactionRepository transactionRepository,
+            ITransactionCategoryRepository transactionCategoryRepository, IAccountRepository accountRepository)
         {
             _mapper = mapper;
             _transactionRepository = transactionRepository;
-            _categoryRepository = categoryRepository;
+            _transactionCategoryRepository = transactionCategoryRepository;
             _accountRepository = accountRepository;
         }
 
         public async Task<TransactionDetailVm> Handle(GetTransactionDetailQuery request, CancellationToken cancellationToken)
         {
-            Transaction @transaction = (await _transactionRepository.GetByIdAsync(request.TransactionID));
-            TransactionDetailVm transactionDetailDto = _mapper.Map<TransactionDetailVm>(@transaction);
-
-            Category category = (await _categoryRepository.GetByIdAsync(transaction.CategoryID));
-            Account account = (await _accountRepository.GetByIdAsync(transaction.AccountID));
-            transactionDetailDto.Category = _mapper.Map<CategoryDto>(category);
-            transactionDetailDto.Account = _mapper.Map<AccountDto>(account);
+            Transaction transaction = (await _transactionRepository.GetByIdAsync(request.TransactionID));
+            TransactionDetailVm transactionDetailDto = _mapper.Map<TransactionDetailVm>(transaction);
 
             return transactionDetailDto;
         }

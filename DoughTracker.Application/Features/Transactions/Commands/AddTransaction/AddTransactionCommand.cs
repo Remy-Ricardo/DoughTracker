@@ -21,7 +21,7 @@ namespace DoughTracker.Application.Features.Transactions.Commands.AddTransaction
 
         public string Status { get; set; }
 
-        public DateTime Frequency { get; set; }
+        public string Frequency { get; set; }
 
         public string Notes { get; set; }
 

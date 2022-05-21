@@ -1,13 +1,15 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DoughTracker.Domain.Entities
 {
-    public class Category
+    public class TransactionCategory
     {
+        [Key]
         public Guid CategoryID { get; set; }
 
         public string CategoryName { get; set; }
 
-        public Subcategory Subcategory { get; set; }
+        public int SubcategoryID { get; set; }
     }
 }

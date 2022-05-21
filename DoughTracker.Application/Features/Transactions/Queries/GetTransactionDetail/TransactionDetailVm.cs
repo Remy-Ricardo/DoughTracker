@@ -6,9 +6,9 @@ namespace DoughTracker.Application.Features.Transactions
     {
         public Guid TransactionID { get; set; }
 
-        public AccountDto Account { get; set; }
+        public Guid AccountID { get; set; }
 
-        public CategoryDto Category { get; set; }
+        public Guid CategoryID { get; set; }
 
         public string Description { get; set; }
 

@@ -18,8 +18,8 @@ namespace DoughTracker.Application.Features.Profiles
             CreateMap<Transaction, TransactionListVm>().ReverseMap();
             CreateMap<Transaction, TransactionDetailVm>().ReverseMap();
             CreateMap<Transaction, AddTransactionCommand>().ReverseMap();
-            CreateMap<Category, CategoryDto>().ReverseMap();
-            CreateMap<Category, CategoryListVm>().ReverseMap();
+            CreateMap<TransactionCategory, CategoryDto>().ReverseMap();
+            CreateMap<TransactionCategory, CategoryListVm>().ReverseMap();
         }
     }
 }

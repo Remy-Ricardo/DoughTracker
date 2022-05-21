@@ -43,7 +43,17 @@ namespace DoughTracker.Application.Features.Transactions.Commands.AddTransaction
 
                 var transaction = new Transaction() 
                 { 
-                    Description = request.Description 
+                    AccountID = request.AccountID,
+                    Amount = request.Amount,
+                    CategoryID = request.CategoryID,
+                    Date = request.Date,
+                    Description = request.Description,
+                    Frequency = request.Frequency,
+                    Notes = request.Notes,
+                    CreatedDate = DateTime.Now,
+                    //CreatedBy =
+                    PaymentType = request.PaymentType,
+                    TransactionType = request.TransactionType
                 };
 
                 transaction = (await _transactionRepository.AddAsync(transaction));

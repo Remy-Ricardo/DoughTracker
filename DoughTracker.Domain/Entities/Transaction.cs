@@ -1,12 +1,14 @@
 ﻿using DoughTracker.Domain.Common;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace DoughTracker.Domain.Entities
 {
     public class Transaction : AuditableEntity
     {
+        [Key]
         public Guid TransactionID { get; set; }
         
         public Guid AccountID { get; set; }
@@ -23,7 +25,7 @@ namespace DoughTracker.Domain.Entities
 
         public string Status { get; set; }
 
-        public DateTime Frequency { get; set; }
+        public string Frequency { get; set; }
 
         public string Notes { get; set; }
 

@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DoughTracker.Application.Contracts.Persistence
 {
-    public interface ICategoryRepository : IAsyncRepository<Category>
+    public interface ITransactionCategoryRepository : IAsyncRepository<TransactionCategory>
     {
+
     }
 }
