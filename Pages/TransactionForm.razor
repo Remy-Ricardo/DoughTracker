@@ -1,0 +1,32 @@
+@page "/transaction"
+
+<h3>Transaction Form</h3>
+
+<RadzenTemplateForm Data="transaction" Submit="OnSave">
+    <RadzenFieldset Text="Details">
+        <RadzenLabel Text="Date" Component="date" />
+        <RadzenDatePicker @bind-Value="transaction.Date" Name="date" Style="width:100%" />
+
+        <RadzenLabel Text="Amount" Component="amount" />
+        <RadzenNumeric @bind-Value="transaction.Amount" Name="amount" Style="width:100%" />
+
+        <RadzenLabel Text="Category" Component="category" />
+        <CategoryDropdown Categories="categories" OnCategoryChanged="id => transaction.CategoryId = id" />
+
+        <RadzenButton Text="Save" ButtonStyle="ButtonStyle.Primary" Type="Submit" Style="margin-top:10px" />
+    </RadzenFieldset>
+</RadzenTemplateForm>
+
+@code {
+    private Transaction transaction = new();
+    private List<Category> categories = new();
+
+    private void OnSave()
+    {
+        // Save logic here
+        NavigationManager.NavigateTo("/transactions");
+    }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+}

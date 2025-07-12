@@ -1,0 +1,12 @@
+@page "/transactions"
+
+<h3>Transactions</h3>
+
+<RadzenButton Text="Add Transaction" ButtonStyle="ButtonStyle.Primary" Style="margin-bottom:10px" Click='() => NavigationManager.NavigateTo("/transaction")' />
+
+<TransactionList />
+
+@code {
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+}

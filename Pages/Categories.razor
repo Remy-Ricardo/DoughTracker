@@ -1,0 +1,21 @@
+@page "/categories"
+
+<h3>Categories</h3>
+
+<RadzenButton Text="Add Category" ButtonStyle="ButtonStyle.Primary" Style="margin-bottom:10px" />
+
+<RadzenDataGrid Data="categories" TItem="Category" RowSelect="OnSelect">
+    <Columns>
+        <RadzenDataGridColumn TItem="Category" Property="Name" Title="Name" />
+        <RadzenDataGridColumn TItem="Category" Property="Type" Title="Type" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    private List<Category> categories = new();
+
+    private void OnSelect(Category category)
+    {
+        // Placeholder selection logic
+    }
+}

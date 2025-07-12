@@ -1,0 +1,39 @@
+@page "/signin"
+
+<h3>Sign In</h3>
+
+<RadzenTemplateForm Data="credentials" Submit="OnSignIn">
+    <RadzenFieldset Text="Credentials">
+        <RadzenLabel Text="Username or Email" Component="username" />
+        <RadzenTextBox @bind-Value="credentials.User" Name="username" Style="width:100%" />
+
+        <RadzenLabel Text="Password" Component="password" />
+        <RadzenPassword @bind-Value="credentials.Password" Name="password" Style="width:100%" />
+
+        <RadzenButton Text="Sign In" ButtonStyle="ButtonStyle.Primary" Type="Submit" Style="margin-top:10px" />
+    </RadzenFieldset>
+</RadzenTemplateForm>
+
+<div class="mt-2">
+    <a href="/forgot">Forgot password?</a>
+    |
+    <a href="/register">Create account</a>
+</div>
+
+@code {
+    private void OnSignIn()
+    {
+        NavigationManager.NavigateTo("/overview");
+    }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+
+    private Credentials credentials = new();
+
+    private class Credentials
+    {
+        public string User { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}

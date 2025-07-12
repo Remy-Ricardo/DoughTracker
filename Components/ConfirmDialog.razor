@@ -1,0 +1,21 @@
+<RadzenDialog Visible="@Visible" Style="width:400px" ShowClose="false">
+    <ChildContent>
+        <p>@Message</p>
+        <RadzenButton Text="OK" ButtonStyle="ButtonStyle.Primary" Click="() => OnConfirm.InvokeAsync()" />
+        <RadzenButton Text="Cancel" ButtonStyle="ButtonStyle.Secondary" Click="() => OnCancel.InvokeAsync()" Style="margin-left:10px" />
+    </ChildContent>
+</RadzenDialog>
+
+@code {
+    [Parameter]
+    public string Message { get; set; } = "Are you sure?";
+
+    [Parameter]
+    public bool Visible { get; set; }
+
+    [Parameter]
+    public EventCallback OnConfirm { get; set; }
+
+    [Parameter]
+    public EventCallback OnCancel { get; set; }
+}
