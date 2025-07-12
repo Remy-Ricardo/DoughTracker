@@ -1,0 +1,12 @@
+<RadzenCard Style="text-align:center;">
+    <h4>@Title</h4>
+    <p>@Value</p>
+</RadzenCard>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Value { get; set; } = string.Empty;
+}

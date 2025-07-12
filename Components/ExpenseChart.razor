@@ -1,0 +1,14 @@
+<RadzenChart>
+    <RadzenPieSeries Data="Data" CategoryProperty="Category" ValueProperty="Value" />
+</RadzenChart>
+
+@code {
+    [Parameter]
+    public IEnumerable<ChartData> Data { get; set; } = Enumerable.Empty<ChartData>();
+
+    public class ChartData
+    {
+        public string Category { get; set; } = string.Empty;
+        public decimal Value { get; set; }
+    }
+}

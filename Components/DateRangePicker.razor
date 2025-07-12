@@ -1,0 +1,10 @@
+<RadzenDatePicker @bind-Value="Start" Style="width:150px" />
+<RadzenDatePicker @bind-Value="End" Style="width:150px;margin-left:10px" />
+
+@code {
+    [Parameter]
+    public DateTime Start { get; set; }
+
+    [Parameter]
+    public DateTime End { get; set; }
+}

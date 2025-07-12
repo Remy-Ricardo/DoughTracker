@@ -1,0 +1,15 @@
+<RadzenDataGrid Data="Transactions" TItem="Transaction" RowSelect="OnSelect" Style="height:400px">
+    <Columns>
+        <RadzenDataGridColumn TItem="Transaction" Property="Date" Title="Date" />
+        <RadzenDataGridColumn TItem="Transaction" Property="Description" Title="Description" />
+        <RadzenDataGridColumn TItem="Transaction" Property="Amount" Title="Amount" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    [Parameter]
+    public IReadOnlyList<Transaction> Transactions { get; set; } = new List<Transaction>();
+
+    [Parameter]
+    public EventCallback<Transaction> OnSelect { get; set; }
+}
