@@ -1,4 +1,5 @@
 @page "/signin"
+@attribute [AllowAnonymous]
 
 <h3>Sign In</h3>
 
@@ -21,13 +22,20 @@
 </div>
 
 @code {
-    private void OnSignIn()
+    private async Task OnSignIn()
     {
-        NavigationManager.NavigateTo("/overview");
+        var result = await SignInManager.PasswordSignInAsync(credentials.User, credentials.Password, false, false);
+        if (result.Succeeded)
+        {
+            NavigationManager.NavigateTo("/overview");
+        }
     }
 
     [Inject]
     private NavigationManager NavigationManager { get; set; } = default!;
+
+    [Inject]
+    private SignInManager<IdentityUser> SignInManager { get; set; } = default!;
 
     private Credentials credentials = new();
 
